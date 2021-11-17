@@ -7,7 +7,7 @@
 - Fashshila Yasmin D/o Mohammed Yunoos (2001301)
 
 ## Getting Started (for windows)
-- Make sure you have at least Pythom 3.8.5 and Visual Studio Code
+- Make sure you have at least Python 3.8.5 and Visual Studio Code
 
 ## Setup
 **Clone the Project Repo**
