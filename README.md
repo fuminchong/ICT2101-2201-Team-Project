@@ -24,3 +24,7 @@
 1. Navigate to the root directory of the project (where app.py is)
 2. Start the debugger by selecting the Run > Start Debugging 
 3. Open Google chrome and navigate to http://127.0.0.1:5000/
+
+##Work Distribution
+**Branch Management**
+
