@@ -25,6 +25,6 @@
 2. Start the debugger by selecting the Run > Start Debugging 
 3. Open Google chrome and navigate to http://127.0.0.1:5000/
 
-##Work Distribution
+## Work Distribution
 **Branch Management**
 
