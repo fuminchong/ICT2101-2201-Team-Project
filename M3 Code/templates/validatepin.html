@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %} Validate Pin
+
+{% endblock %}
+{% block content %} 
+<center><h2>Validate Pin</h2></center>
+<div class="validatepin"></div>
+<div class="validateguide">
+  Hi Students, ask your teacher to enter the pin for you to start the lesson.
+</div>
+<form class="validateform">
+    <label for="fpin">Pin</label>
+    <input type="text" id="pin" name="fpin">
+    <br>
+    <br>
+    <center><button>Submit Pin</button></center>
+  </form>
+<div class="validateimage"></div>
+
+{% endblock %}

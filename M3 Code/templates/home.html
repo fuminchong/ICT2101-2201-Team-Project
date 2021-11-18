@@ -2,5 +2,17 @@
 {% block title %} Home
 
 {% endblock %}
-{% block content %} <p>Home page for the Visual Studio Code Flask tutorial.</p>
+{% block content %} 
+<section class="scratch"></section>
+<div class="scratchhome">
+    <h2>Scratch <br>Programming</h2>
+</div>
+<div class="scratchhomecontent">
+    <p>A simple and accessible programming language<br> for young kids<br>
+    <p><p style="color:orange;">Your child will be able to operate a car</p>Under the guidance of their teachers.</p>
+    </p>
+
+</div>
+<a href="{{ url_for('validatepin') }}" class="btn btn-oval">Start Now</a>
+
 {% endblock %}
