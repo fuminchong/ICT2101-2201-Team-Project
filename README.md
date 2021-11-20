@@ -5,6 +5,7 @@
 - Png Han Zheng (2000970)
 - Chong Fu Min (2002039)
 - Fashshila Yasmin D/o Mohammed Yunoos (2001301)
+- Lee Yen Ning (2001775)
 
 ## Getting Started (for windows)
 - Make sure you have at least Python 3.8.5 and Visual Studio Code
