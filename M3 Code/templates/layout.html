@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    {% block scripts %}{% endblock scripts %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+</head>
 
     <body>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='background.css')}}" />
         <div class="navbar" style="height:fit-content;">
             <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
             <a href="{{ url_for('dashboard') }}" class="navbar-item" style="float:right">Dashboard</a>
-            <a href="{{ url_for('scratch') }}" class="navbar-item" style="float:right">Scratch</a>
+            <a href="{{ url_for('scratcheasy') }}" class="navbar-item" style="float:right">Scratch</a>
         </div>
         <section class="home">
             

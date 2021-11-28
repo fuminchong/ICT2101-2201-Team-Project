@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block title %} Scratch Programming
+
+{% endblock %}
+{% block scripts %}
+<link rel="shortcut icon" href="#">
+<script src="../static/js/blockly_compressed.js"></script>
+<script src="../static/js/python_compressed.js"></script>
+<script src="../static/js/pythongenerator.js"></script>
+<script src="../static/js/blocks_compressed.js"></script>
+<script src="../static/js/en.js"></script>
+<script src="../static/js/test.js"></script>
+
+
+{% endblock scripts %}
+{% block content %}
+
+<style>
+    .submit {
+        float: right;
+        font-family: Helvetica, Arial, sans-serif;
+        padding: 10px;
+    }
+</style>
+
+<h1>
+    Difficulty Level: Easy - If
+</h1>
+<p>
+    Challenge: You are going to allow the car to move at a speed of 4!<br /><br />
+    Assuming the car is stationary and will move only once. You must check for obstacles in front of the car.
+    <br />When there is no obstacle, your car moves. Otherwise, your car does nothing and print 'Stop!'.
+    <br />
+    Have fun coding!
+</p>
+<p>
+    2 ways to do this! We accept different answers. :) <br />Hint: Use if-do-else block.
+</p>
+
+<section id="blocklyContainer">
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+</section>
+
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <block type="move"></block>
+    <block type="text_print">
+        <value name="TEXT">
+            <block type="text">
+                <field name="TEXT">Stop!</field>
+            </block>
+    </block>
+    <block type="variables_set" inline="false">
+        <field name="VAR">speed</field>
+    </block>
+    <block type="variables_get">
+        <field name="VAR">obstacle</field>
+    </block>
+    <block type="logic_boolean"></block>
+    <block type="controls_if">
+        <mutation else="1"></mutation>
+    </block>
+    
+    <block type="logic_compare"></block>
+    <block type="math_number">
+        <field name="NUM">4</field>
+    </block>
+
+
+</xml>
+
+
+
+<button class="submit" onclick="run()"> Run Me </button>
+
+<script>
+    var demoWorkspace = Blockly.inject('blocklyDiv',
+        {
+            toolbox: document.getElementById('toolbox')
+        });
+
+    function run() {    
+        Blockly.Python.INFINITE_LOOP_TRAP = null;
+        var code = Blockly.Python.workspaceToCode(demoWorkspace);
+        //remove special characters
+        code = code.replace(/(\r\n|\n|\r)/gm, "");
+        alert(code);
+        console.log(code);
+        
+        //check if code is correct
+        if (code == "speed = Noneobstacle = Nonespeed = 4if obstacle != True:  moveelse:  print('Stop!')"){
+            alert("CORRECT!");
+        }
+        else if (code == "speed = Noneobstacle = Nonespeed = 4if obstacle == True:  print('Stop!')else:  move")
+        {
+            alert("CORRECT!");
+        }
+
+    }
+</script>
+
+
+
+    {% endblock %}
