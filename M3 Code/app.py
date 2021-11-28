@@ -59,9 +59,9 @@ def scratcheasy2():
 def scratchmed():
     return render_template("scratchmedium.html")
 
-# @app.route("/scratchhard/")
-# def scratchhard():
-#     return render_template("scratchhard.html")
+@app.route("/scratchhard/")
+def scratchhard():
+    return render_template("scratchhard.html")
 
 
 @app.route("/dashboard/")
