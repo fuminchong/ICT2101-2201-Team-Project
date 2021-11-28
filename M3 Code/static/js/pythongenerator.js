@@ -1,17 +1,17 @@
 Blockly.Python['move'] = function (block) {
-    return 'move \n';
+    return 'move';
 };
 Blockly.Python['left'] = function (block) {
-    return 'left \n';
+    return 'left';
 
 };
 Blockly.Python['red'] = function (block) {
-    // return 'red \n';
-    return ['red','red'];
+    return ['red',Blockly.Python.PRECEDENCE = 0];
 
 };
 Blockly.Python['green'] = function (block) {
-    return ['green','green'];
+    
+    return ['green',Blockly.Python.PRECEDENCE = 0];
 
 };
 
