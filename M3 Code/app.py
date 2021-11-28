@@ -30,6 +30,19 @@ def scratchmed():
 def scratchhard():
     return render_template("scratchhard.html")
 
+@app.route('/lessonplan', methods=['GET', 'POST'])
+def setlessonplan():
+    with open('./static/data.json') as json_data:
+        lesson_data = json.load(json_data)
+    if request.method == 'POST':
+        lessonplan = request.form["lp"]
+        if lessonplan in lesson_data["lessonplanA"]:
+            return redirect(url_for("lessonplanA"))
+        elif lessonplan in lesson_data["lessonplanB"]:
+            return redirect(url_for("lessonplanB"))
+        elif lessonplan in lesson_data["lessonplanC"]:
+            return redirect(url_for("lessonplanC"))   
+
 
 @app.route("/dashboard/")
 def dashboard():
