@@ -1,10 +1,12 @@
 body {
-    /* The image used */
-    
+  /* The image used */
   
-    /* Full height */
-    height: 100%; 
-    background-color: aliceblue;
-  
-    /* Center and scale the image nicely */
-  }
+
+  /* Full height */
+  height: 100%; 
+  /* background-color: aliceblue; */
+  background-color: #FFDEE9;
+  background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+
+  /* Center and scale the image nicely */
+}

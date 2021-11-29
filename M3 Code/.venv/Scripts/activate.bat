@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\png_h\Downloads\ICT2101 Introduction to Software Engineering\M3 Code\.venv
+set VIRTUAL_ENV=C:\Users\ongsh\OneDrive\Desktop\ICT2101-2201-Team-Project\M3 Code\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 

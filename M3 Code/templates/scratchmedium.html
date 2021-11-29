@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block title %} Scratch Programming
+
+{% endblock %}
+{% block scripts %}
+<link rel="shortcut icon" href="#">
+<script src="../static/js/blockly_compressed.js"></script>
+<script src="../static/js/python_compressed.js"></script>
+<script src="../static/js/pythongenerator.js"></script>
+<script src="../static/js/blocks_compressed.js"></script>
+<script src="../static/js/en.js"></script>
+<script src="../static/js/test.js"></script>
+{% endblock scripts %}
+{% block content %}
+
+<style>
+    .submit {
+        float: right;
+        font-family: Helvetica, Arial, sans-serif;
+        padding: 10px;
+    }
+</style>
+
+<h1>
+    Difficulty Level: Medium
+</h1>
+<p>
+    Challenge: You are going to allow the car to move at a speed of 4!<br /><br />
+    Assuming the car is stationary. You must check for obstacles in front of the car.
+    <br />
+    The car will keep moving until obstacle is detected. When obstacle is detected, your car will
+    stop and move left once. <br /><i>In this case, you can assume if you don't trigger move, it will stop.</i>
+
+    Otherwise, if the car detects obstacle at the start, it will not move at first, but will move left once after
+    awhile.
+    <br />
+    Have fun coding!
+</p>
+    Note: If obstacle is detected, in this case, you will allow your car to move left once!
+    Hint: Use 'while' loop block!
+    2 ways is accepted!
+    <br />
+        You can use either of below conditions to represent no obstacle detected:
+    <br />
+        1. Not equals to true
+        2. Equals to false
+</p>
+<section id="blocklyContainer">
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+</section>
+
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <block type="move"></block>
+    <block type="left"></block>
+    <block type="variables_set" inline="false">
+        <field name="VAR">speed</field>
+    </block>
+    <block type="variables_get">
+        <field name="VAR">obstacle</field>
+    </block>
+    <block type="logic_boolean"></block>
+    <block type="controls_whileUntil"></block>
+    <block type="logic_compare"></block>
+    <block type="math_number">
+        <field name="NUM">4</field>
+    </block>
+
+
+</xml>
+
+<button class="submit" onclick="run()"> Run Me </button>
+<form method="POST" action="/scratchmedium" method="post">
+    <input type="submit" value="Submit">
+</form>
+<script>
+    var demoWorkspace = Blockly.inject('blocklyDiv',
+        {
+            toolbox: document.getElementById('toolbox')
+        });
+
+    function run() {    
+        Blockly.Python.INFINITE_LOOP_TRAP = null;
+        var code = Blockly.Python.workspaceToCode(demoWorkspace);
+        //remove special characters
+        code = code.replace(/(\r\n|\n|\r)/gm, "");
+        alert(code);
+        console.log(code);
+        
+        //check if code is correct
+        if (code == "speed = Noneobstacle = Nonespeed = 4while obstacle != True:  moveleft"){
+            alert("CORRECT!");
+        }
+        else if (code == "speed = Noneobstacle = Nonespeed = 4while obstacle == False:  moveleft")
+        {
+            alert("CORRECT!");
+        }
+
+    }
+</script>
+
+
+
+    {% endblock %}

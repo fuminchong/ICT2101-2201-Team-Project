@@ -3,16 +3,57 @@
 
 {% endblock %}
 {% block content %} 
-<section class="scratch"></section>
+<style>
+
+    input[type=text], select {
+        display: inline-block;
+  width: 240px;
+  height: 70px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 35px;
+  border: 1px solid #579a00;
+  font: bold 30px/70px Arial;
+  box-shadow: inset 0 2px 2px #cce464, inset 1px 0 3px #b2dc2d,
+    inset -1px 0 3px #b2dc2d, inset 0 -2px 2px #89d301,
+    0 0 3px rgba(0, 0, 0, 0.24);
+  position: relative;
+  text-shadow: 0 1px #45880d;
+  outline: none;
+    }
+    
+    label {
+      font-size:18px;
+      font-family:Calibri;
+    }
+    
+    p[class=error]{
+      font-size:15px;
+      font-family:Calibri;
+    }
+    
+    </style>
+
 <div class="scratchhome">
     <h2>Scratch <br>Programming</h2>
 </div>
+
+<form class="validateform" action="#" method="post">
+    <input type="text" id="pin" name="fpin" placeholder="Enter PIN">
+	{% if error %}
+        <p class="error" style="margin-left: 50px;"><strong>Error:</strong> {{ error }}
+      	{% endif %}
+    <br>
+    <br>
+    <button type="submit" name="submit_button" class="btn btn-oval">Submit Pin</button>
+  </form>
+
 <div class="scratchhomecontent">
     <p>A simple and accessible programming language<br> for young kids<br>
     <p><p style="color:orange;">Your child will be able to operate a car</p>Under the guidance of their teachers.</p>
     </p>
 
 </div>
-<a href="{{ url_for('validatepin') }}" class="btn btn-oval">Start Now</a>
 
 {% endblock %}

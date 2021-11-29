@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+{% block title %} Scratch Programming
+
+{% endblock %}
+{% block scripts %}
+<link rel="shortcut icon" href="#">
+<script src="../static/js/blockly_compressed.js"></script>
+<script src="../static/js/python_compressed.js"></script>
+<script src="../static/js/pythongenerator.js"></script>
+<script src="../static/js/blocks_compressed.js"></script>
+<script src="../static/js/en.js"></script>
+<script src="../static/js/test.js"></script>
+{% endblock scripts %}
+{% block content %}
+
+<style>
+    .submit {
+        float: right;
+        font-family: Helvetica, Arial, sans-serif;
+        padding: 10px;
+    }
+</style>
+
+<h1>
+    Difficulty Level: Hard
+</h1>
+<p>
+    Challenge: You are going to allow the car to move at a speed of 4 and set color of LED lights!<br /><br />
+    After you set speed of car, you must set your car LED to 'Green' to represent start.
+    Assuming the car is stationary. You must check for obstacles in front of the car.
+    <br />
+    The car will keep moving until obstacle is detected. When obstacle is detected, your car will
+    stop. In addition, your car LED should set to 'Red' when obstacle is detected.<br />
+    After your car LED blinks red, allow the car to move left.
+    <br /><br />
+    Important to note: <br /> Follow the sequence:<br />
+    1. Set speed of car <br />
+    2. Set LED to 'Green' <br />
+    3. Obstacle detected! (no action needed here) <br />
+    3. Car LED set to 'Red' <br />
+    4. Car moves left
+
+    <br /><br />
+    <i>
+        Students, do you recall this in Medium level? This level will be similar to Medium level, but with
+        addition of LED lights you can set for.
+    </i>
+    <br />
+
+
+    Have fun coding!
+
+</p>
+<p>
+    Note: If obstacle is detected, in this case, you will allow your car to move left once!
+    Hint: Use 'while' loop block!
+    2 ways is accepted!
+</p>
+<section id="blocklyContainer">
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+</section>
+
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <block type="move"></block>
+    <block type="left"></block>
+    <block type="red"></block>
+    <block type="green"></block>
+    <block type="variables_set" inline="false">
+        <field name="VAR">speed</field>
+    </block>
+    <block type="variables_set" inline="false">
+        <field name="VAR">LED</field>   
+    </block>
+    <block type="variables_get">
+        <field name="VAR">obstacle</field>
+    </block>
+    <block type="logic_boolean"></block>
+    <block type="controls_whileUntil"></block>
+    <block type="logic_compare"></block>
+    <block type="math_number">
+        <field name="NUM">4</field>
+    </block>
+
+
+</xml>
+
+<button class="submit" onclick="run()"> Run Me </button>
+<form method="POST" action="/scratchhard" method="post">
+    <input type="submit" value="Submit" id="myP">
+</form>
+<script>
+    document.getElementById("myP").style.visibility = "hidden";
+    var demoWorkspace = Blockly.inject('blocklyDiv',
+        {
+            toolbox: document.getElementById('toolbox')
+        });
+
+    function run() {    
+        
+        Blockly.Python.INFINITE_LOOP_TRAP = null;
+        var code = Blockly.Python.workspaceToCode(demoWorkspace);
+        //remove special characters
+        code = code.replace(/(\r\n|\n|\r)/gm, "");
+        alert(code);
+        console.log(code);
+        
+        //check if code is correct
+        if (code == "speed = NoneLED = Noneobstacle = Nonespeed = 4LED = greenwhile obstacle != True:  moveLED = redleft"){
+            alert("CORRECT!");
+            document.getElementById("myP").style.visibility = "true";
+        }
+        else if (code == "speed = NoneLED = Noneobstacle = Nonespeed = 4LED = greenwhile obstacle == False:  moveLED = redleft")
+        {
+            alert("CORRECT!");
+            document.getElementById("myP").style.visibility = "hidden";
+        }
+        else{
+            alert("WRONG!");
+        }
+
+    }
+</script>
+
+
+    {% endblock %}
