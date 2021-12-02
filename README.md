@@ -38,8 +38,13 @@
 ## White Box Testing
 **Selected Class for White Box Testing**
 
-- Our selected class for white box testing is the car controller class
+Car controller class
+
+We have chosen car controller class as we feel that it is the most important and interesting class. The backend logic of the connection from the robotic car and the website is located inside this car controller class. One of the functions "Send Data" is used for sending the difficulty level for the car to read its movement instructions from. One other function "Read Data" is used by our website to display the data of the car onto our dashboard.
 
 **Test Cases**
+
+We have implemented 3 different test cases for statement coverage testing. The 3 test cases are as follow:
+
 
 **White Box Testing Video**
