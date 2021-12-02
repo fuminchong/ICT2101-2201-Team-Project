@@ -26,7 +26,6 @@ class car():
 
 class carController():
     def connectCar(car):
-        print("Actuator status is : " + car.getActuatorStatus())
         if car.getActuatorStatus() == "Not Connected":
             car.setActuatorStatus("Connected")
             return True
@@ -34,7 +33,6 @@ class carController():
             return False
     
     def disconnectCar(car):
-        print("Actuator status is : " + car.getActuatorStatus())
         if car.getActuatorStatus() == "Connected":
             car.setActuatorStatus("Not Connected")
             return True
@@ -69,31 +67,48 @@ class carController():
         return data
 
     def detectObstacle(car):
-        print("Sensor status is : " + car.getSensorStatus())
         if car.getSensorStatus() == "Obstacle":
-            #print("STOP !")
             return True
         else:
-            #print("No obstacle. Continue moving")
             return False
-        return
 
 
 def testCase1():
     print("Test case 1:\n")
     newCar1 = car(sensorStatus="No obstacle", actuatorStatus="Not Connected", speed="0 m/s")
-    carController.connectCar(newCar1)
-    carController.sendData()
-    carController.detectObstacle(newCar1)
+    try:
+        assert(carController.connectCar(newCar1)), "Car already connected"
+        print("Car from 'Not Connected' to 'Connected'")
+
+        carController.sendData()
+        print("Sent data")
+
+        assert(carController.detectObstacle(newCar1)), "No obstacle"
+        print("There are obstacle detected")
+
+    except AssertionError as msg:
+        print(msg)
     print("\n")
+    
 
 def testCase2():
     print("Test case 2:\n")
     newCar2 = car(sensorStatus="Obstacle", actuatorStatus="Connected", speed="1 m/s")
-    carController.disconnectCar(newCar2)
-    level = carController.sendData()
-    carController.receiveData(level)
-    carController.detectObstacle(newCar2)
+    try:
+        assert(carController.disconnectCar(newCar2)), "Car already disconnected"
+        print("Car from 'Connected' to 'Not Connected'")
+
+        level = carController.sendData()
+        print("Sent data")
+
+        carController.receiveData(level)
+        print("Received data")
+
+        assert(carController.detectObstacle(newCar2)), "No obstacle"
+        print("There are obstacle detected")
+
+    except AssertionError as msg:
+        print(msg)
     print("\n")
 
 def testCase3():
@@ -105,6 +120,6 @@ def testCase3():
     print("\n")
 
 
-testCase1()
-testCase2()
-testCase3()
+#testCase1()
+#testCase2()
+#testCase3()
