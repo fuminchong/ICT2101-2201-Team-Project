@@ -45,7 +45,7 @@ def scratcheasy():
         with open('static/level.txt', 'w') as f:    # Write difficulty level into level.txt
             f.write(level)                          # Write difficulty level into level.txt
         return redirect(url_for("dashboard"))      # Open dashboard page
-
+    return render_template("scratcheasy.html")
 
 @app.route("/scratcheasy2/")
 def scratcheasy2():
