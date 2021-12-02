@@ -101,7 +101,7 @@ def dashboard():
     # level = carController.sendData()
     # return render_template("dashboard.html", level = level)
     level = carController.sendData()
-    data2 = carController.receiveData()
+    data2 = carController.receiveData(level)
     data = [level, data2[0], data2[1], data2[2], data2[3]]
     return render_template("dashboard.html", data = data)
 
