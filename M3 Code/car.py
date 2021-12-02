@@ -1,13 +1,3 @@
-from flask import Flask
-from datetime import datetime
-import re
-import json
-import sys
-
-app = Flask(__name__)
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port="5000")
-
 class car():
     def __init__(self, sensorStatus, actuatorStatus, speed):
         self.sensorStatus = sensorStatus
@@ -39,15 +29,17 @@ class carController():
         print("Actuator status is : " + car.getActuatorStatus())
         if car.getActuatorStatus() == "Not Connected":
             car.setActuatorStatus("Connected")
-        print("Actuator status is : " + car.getActuatorStatus())
-        return
+            return True
+        else:
+            return False
     
     def disconnectCar(car):
         print("Actuator status is : " + car.getActuatorStatus())
         if car.getActuatorStatus() == "Connected":
             car.setActuatorStatus("Not Connected")
-        print("Actuator status is : " + car.getActuatorStatus())
-        return
+            return True
+        else:
+            return False
 
     def sendData():
         with open("static/level.txt", "r") as f: 
@@ -56,14 +48,22 @@ class carController():
         return level
 
 
-    def receiveData():
-        with open("static/status.txt", "r") as f: 
-            level2 = f.read()
-            split = level2.split("-")
-            sensor = split[0]
-            dist = split[1]
-            speed = split[2]
-            actuator = split[3]
+    def receiveData(level):
+        if level == "Easy":
+            with open("static/statusEasy.txt", "r") as f: 
+                level2 = f.read()
+        elif level == "Medium":
+            with open("static/statusMedium.txt", "r") as f: 
+                level2 = f.read()
+        else:
+            with open("static/statusHard.txt", "r") as f: 
+                level2 = f.read()
+
+        split = level2.split("-")
+        sensor = split[0]
+        dist = split[1]
+        speed = split[2]
+        actuator = split[3]
         data = [sensor, dist, speed, actuator]
 
         return data
@@ -71,30 +71,40 @@ class carController():
     def detectObstacle(car):
         print("Sensor status is : " + car.getSensorStatus())
         if car.getSensorStatus() == "Obstacle":
-            print("STOP !")
+            #print("STOP !")
+            return True
+        else:
+            #print("No obstacle. Continue moving")
+            return False
         return
 
 
 def testCase1():
     print("Test case 1:\n")
-    newCar1 = car(sensorStatus="Obstacle", actuatorStatus="Not Connected", speed="0 m/s")
-    carController.disconnectCar(newCar1)
+    newCar1 = car(sensorStatus="No obstacle", actuatorStatus="Not Connected", speed="0 m/s")
     carController.connectCar(newCar1)
     carController.sendData()
-    carController.receiveData()
     carController.detectObstacle(newCar1)
     print("\n")
 
 def testCase2():
     print("Test case 2:\n")
-    newCar2 = car(sensorStatus="No Obstacle", actuatorStatus="Connected", speed="0 m/s")
+    newCar2 = car(sensorStatus="Obstacle", actuatorStatus="Connected", speed="1 m/s")
     carController.disconnectCar(newCar2)
-    carController.connectCar(newCar2)
-    carController.sendData()
-    carController.receiveData()
+    level = carController.sendData()
+    carController.receiveData(level)
     carController.detectObstacle(newCar2)
+    print("\n")
+
+def testCase3():
+    print("Test case 3:\n")
+    newCar3 = car(sensorStatus="No obstacle", actuatorStatus="Connected", speed="0 m/s")
+    print("Current car speed is: " + newCar3.getSpeed())
+    newCar3.setSpeed("1 m/s")
+    print("New car speed is : " + newCar3.getSpeed())
     print("\n")
 
 
 testCase1()
 testCase2()
+testCase3()
