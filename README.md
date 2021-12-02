@@ -45,6 +45,6 @@ We have chosen car controller class as we feel that it is the most important and
 **Test Cases**
 
 We have implemented 3 different test cases for statement coverage testing. The 3 test cases are as follow:
-
+1. The first test case is to check when there are no obstacles and the car is not connected
 
 **White Box Testing Video**
