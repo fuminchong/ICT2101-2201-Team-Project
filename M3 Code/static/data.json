@@ -5,10 +5,14 @@
     "pin": ["123456", "222222"] ,
     "lessonplana":["A"],
     "lessonplanb":["B"],
+<<<<<<< Updated upstream
     "lessonplanc":["C"],
     "easy":{
       "speed":"5"
       
     }
+=======
+    "lessonplanc":["C"]
+>>>>>>> Stashed changes
 
 }

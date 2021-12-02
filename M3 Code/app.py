@@ -23,8 +23,11 @@ def home():
             error = 'Invalid PIN. Please try again.'
     
     return render_template("home.html", error = error)
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 
 @app.route("/lessonplan", methods=["POST", "GET"])
 =======
@@ -73,12 +76,16 @@ def scratchhard():
     return render_template("scratchhard.html")
 
 @app.route('/lessonplans', methods=['GET', 'POST'])
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 def setlessonplan():
     with open('./static/data.json') as json_data:
         lesson_data = json.load(json_data)
     if request.method == "POST":
         lessonplan = request.form["lp"]
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         if lessonplan in lesson_data["lessonplanA"]:
             return redirect(url_for("lessonplanA"))
@@ -109,6 +116,8 @@ def validatepin():
     
     return render_template("validatepin.html", error = error)
 =======
+=======
+>>>>>>> Stashed changes
         if lessonplan in lesson_data["lessonplana"]:
             return redirect(url_for("scratcheasy"))
             #return render_template("scratcheasy.html")
@@ -118,6 +127,9 @@ def validatepin():
         elif lessonplan in lesson_data["lessonplanc"]:
             return redirect(url_for("scratchhard"))   
             #return render_template("scratchhard.html")
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 @app.route("/scratch/")

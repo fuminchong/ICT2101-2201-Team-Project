@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {% extends "layout.html" %}
 {% block title %} Lesson Plans
 
@@ -71,4 +72,79 @@
 
 
 </html>
+=======
+{% extends "layout.html" %}
+{% block title %} Lesson Plans
+
+{% endblock %}
+{% block content %} 
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Select Lesson Plans</title>
+</head>
+
+<body>
+  <h1 class="text-center"> Please kindly select a lesson plan</h1>
+  <table class="table table-striped text-center" style="width:50%; margin-left:auto; margin-right:auto">
+    <thead class="thead-light ">
+      <tr>
+        <th scope="col">Lesson</th>
+        <th scope="col">About Lesson Plan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">A</th>
+        <td>This is the easy level. The goal is to set car speed to 4 and if there's an obstacle, the car must stop.</td>
+      </tr>
+      <tr>
+        <th scope="row">B</th>
+        <td>This is the medium level. The goal is to set car speed to 4 and the car must turn left. <br> If there's an obstacle, the car must stop.</td>
+      </tr>
+      <tr>
+        <th scope="row">C</th>
+        <td>This is the hard level. The goal is the same as medium level but you have to set the car's LED to red when it comes to a stop.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form class="lessonplans" action="/lessonplans" method="post">
+    <div class="form-row align-items-center text-center">
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Lesson Plan</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="lp">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Set lesson plan</button>
+      </div>
+    </div>
+    </div>
+  </form>
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+
+</html>
+>>>>>>> Stashed changes
 {% endblock %}
