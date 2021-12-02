@@ -3,8 +3,8 @@
       "note": "This data is very simple because we're demonstrating only the mechanism."
     },
     "pin": ["123456", "222222"] ,
-    "lessonplana":["a"],
-    "lessonplanb":["b"],
-    "lessonplanc":["c"]
+    "lessonplana":["Easy"],
+    "lessonplanb":["Medium"],
+    "lessonplanc":["Hard"]
 
 }

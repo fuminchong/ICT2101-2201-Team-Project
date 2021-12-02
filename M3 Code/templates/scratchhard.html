@@ -15,10 +15,29 @@
 
 <style>
     .submit {
-        float: right;
         font-family: Helvetica, Arial, sans-serif;
-        padding: 10px;
+        position: absolute;
+        top: 700px;
+        right: 600px;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        height:80px;
+        width:100px;
     }
+    #myP{
+        font-family: Helvetica, Arial, sans-serif;
+        position: absolute;
+        top: 600px;
+        right: 600px;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        height:80px;
+        width:100px;
+    }
+
+    
 </style>
 
 <h1>
@@ -85,8 +104,11 @@
 </xml>
 
 <button class="submit" onclick="run()"> Run Me </button>
-
+<form method="POST" action="/scratchhard" method="post">
+    <input type="submit" value="Submit" id="myP">
+</form>
 <script>
+    document.getElementById("myP").style.visibility = "hidden";
     var demoWorkspace = Blockly.inject('blocklyDiv',
         {
             toolbox: document.getElementById('toolbox')
@@ -97,16 +119,21 @@
         var code = Blockly.Python.workspaceToCode(demoWorkspace);
         //remove special characters
         code = code.replace(/(\r\n|\n|\r)/gm, "");
-        alert(code);
+        //alert(code);
         console.log(code);
         
         //check if code is correct
         if (code == "speed = NoneLED = Noneobstacle = Nonespeed = 4LED = greenwhile obstacle != True:  moveLED = redleft"){
             alert("CORRECT!");
+            document.getElementById("myP").style.visibility = "visible";
         }
         else if (code == "speed = NoneLED = Noneobstacle = Nonespeed = 4LED = greenwhile obstacle == False:  moveLED = redleft")
         {
             alert("CORRECT!");
+            document.getElementById("myP").style.visibility = "visible";
+        }
+        else{
+            alert("WRONG!")
         }
 
     }
@@ -114,3 +141,4 @@
 
 
     {% endblock %}
+

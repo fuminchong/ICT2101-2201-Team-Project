@@ -1,3 +1,9 @@
+
+{% extends "layout.html" %}
+{% block title %} Lesson Plans
+
+{% endblock %}
+{% block content %} 
 <!doctype html>
 <html lang='en'>
 
@@ -21,29 +27,28 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">A</th>
+        <th scope="row">Easy</th>
         <td>This is the easy level. The goal is to set car speed to 4 and if there's an obstacle, the car must stop.</td>
       </tr>
       <tr>
-        <th scope="row">B</th>
+        <th scope="row">Medium</th>
         <td>This is the medium level. The goal is to set car speed to 4 and the car must turn left. <br> If there's an obstacle, the car must stop.</td>
       </tr>
       <tr>
-        <th scope="row">C</th>
-        <td>This is the hard level. The goal is the same as medium level but you have to set the car's LED to red when it comes to a stop.</td>
+        <th scope="row">Hard</th>
+        <td>This is the hard level. The goal is the same as medium level but you have to set the car's LED to green when it is going straight and LED to red when it is turning left.</td>
       </tr>
     </tbody>
   </table>
 
-  <form action=" " method="post" id=lessonplanform>
+  <form class="lessonplans" action="/lessonplans" method="post">
     <div class="form-row align-items-center text-center">
       <div class="col-auto my-1">
         <label class="mr-sm-2" for="inlineFormCustomSelect">Lesson Plan</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Choose...</option>
-          <option value="lessonplanA">A</option>
-          <option value="lessonplanB">B</option>
-          <option value="lessonplanC">C</option>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="lp">
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
         </select>
         <button type="submit" class="btn btn-primary">Set lesson plan</button>
       </div>
@@ -67,3 +72,4 @@
 
 
 </html>
+{% endblock %}
