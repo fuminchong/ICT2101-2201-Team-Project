@@ -5,11 +5,13 @@ from flask import render_template, request, redirect, url_for
 import json
 from car import carController
 
+
 app = Flask(__name__)
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="5000")
 @app.route("/", methods=["POST", "GET"])
 def home():
+
     with open('static/level.txt', 'w') as f:        # Dis code to reset the level.txt file
         f.write("") 
 
@@ -27,10 +29,12 @@ def home():
     
     return render_template("home.html", error = error)
 
+
 # New functions
 @app.route("/validatepin/")
 def validatepin():
     return render_template("validatepin.html")
+
 
 @app.route("/scratcheasy", methods=['GET', 'POST'])
 def scratcheasy():
@@ -41,11 +45,12 @@ def scratcheasy():
         with open('static/level.txt', 'w') as f:    # Write difficulty level into level.txt
             f.write(level)                          # Write difficulty level into level.txt
         return redirect(url_for("dashboard"))      # Open dashboard page
-    return render_template("scratcheasy.html")
+
 
 @app.route("/scratcheasy2/")
 def scratcheasy2():
     return render_template("scratcheasy2.html")
+
 
 @app.route("/scratchmedium", methods=['GET', 'POST'])
 def scratchmedium():
@@ -89,9 +94,7 @@ def setlessonplan():
             return redirect(url_for("scratchhard"))   
             #return render_template("scratchhard.html")
 
-@app.route("/scratch/")
-def scratch():
-    return render_template("scratch.html")
+
 
 @app.route("/dashboard/")
 def dashboard():
