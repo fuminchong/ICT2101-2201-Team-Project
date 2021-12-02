@@ -16,10 +16,29 @@
 
 <style>
     .submit {
-        float: right;
         font-family: Helvetica, Arial, sans-serif;
-        padding: 10px;
+        position: absolute;
+        top: 600px;
+        right: 600px;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        height:80px;
+        width:100px;
     }
+    #myP{
+        font-family: Helvetica, Arial, sans-serif;
+        position: absolute;
+        top: 500px;
+        right: 600px;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        height:80px;
+        width:100px;
+    }
+
+    
 </style>
 
 <h1>
@@ -68,10 +87,10 @@
 </xml>
 
 <form method="POST" action="/scratcheasy" method="post">
-    <input type="submit" value="Submit" id="myP">
+    <input type="submit" value="Submit Code" id="myP">
 </form>
 
-<button class="submit" onclick="run()"> Run Me </button>
+<button class="submit" onclick="run()"> Run Challenge</button>
 
 <script>
     document.getElementById("myP").style.visibility = "hidden";
@@ -81,7 +100,7 @@
         });
 
     function run() {    
-       
+        
         Blockly.Python.INFINITE_LOOP_TRAP = null;
         var code = Blockly.Python.workspaceToCode(demoWorkspace);
         //remove special characters
@@ -91,47 +110,27 @@
         //check if code is correct
         if (code == "speed = Noneobstacle = Nonespeed = 4if obstacle != True:  moveelse:  print('Stop!')"){
             alert("CORRECT!");
-<<<<<<< Updated upstream
-            document.getElementById("myP").style.visibility = "true";
-=======
+            document.getElementById("myP").style.visibility = "visible";
             
->>>>>>> Stashed changes
             
         }
         else if (code == "speed = Noneobstacle = Nonespeed = 4if obstacle == True:  print('Stop!')else:  move")
         {
             alert("CORRECT!");
-<<<<<<< Updated upstream
-            document.getElementById("myP").style.visibility = "true";
-        }
-        else if (code == "speed = Noneobstacle = Nonespeed = 4if obstacle == False:  moveelse:  print('Stop!')"){
-            alert("CORRECT!");
-            document.getElementById("myP").style.visibility = "true";
-        }
-        else if (code == "speed = Noneobstacle = Nonespeed = 4if obstacle != False:  print('Stop!')else:  move"){
-            alert("CORRECT!");
-            document.getElementById("myP").style.visibility = "true";
-            
-        }
-        else{
-            alert("WRONG!");
-     
-            
-=======
+            document.getElementById("myP").style.visibility = "visible";
             
         }
         else if (code == "speed = Noneobstacle = Nonespeed = 4if obstacle == False:  moveelse:  print('Stop!')"){
             alert("CORRECT!");
-           
+            document.getElementById("myP").style.visibility = "visible";
         }
         else if (code == "speed = Noneobstacle = Nonespeed = 4if obstacle != False:  print('Stop!')else:  move"){
             alert("CORRECT!");
-            
+            document.getElementById("myP").style.visibility = "visible";
             
         }
         else{
             alert("WRONG!");  
->>>>>>> Stashed changes
         }
         
 

@@ -42,7 +42,7 @@
 <form class="validateform" action="#" method="post">
     <input type="text" id="pin" name="fpin" placeholder="Enter PIN">
 	{% if error %}
-        <p class="error" style="margin-left: 50px;"><strong>Error:</strong> {{ error }}
+        <p class="error"><strong>Error:</strong> {{ error }}
       	{% endif %}
     <br>
     <br>
@@ -55,5 +55,6 @@
     </p>
 
 </div>
+
 
 {% endblock %}

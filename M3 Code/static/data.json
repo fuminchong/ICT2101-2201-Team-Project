@@ -3,16 +3,8 @@
       "note": "This data is very simple because we're demonstrating only the mechanism."
     },
     "pin": ["123456", "222222"] ,
-    "lessonplana":["A"],
-    "lessonplanb":["B"],
-<<<<<<< Updated upstream
-    "lessonplanc":["C"],
-    "easy":{
-      "speed":"5"
-      
-    }
-=======
-    "lessonplanc":["C"]
->>>>>>> Stashed changes
+    "lessonplana":["Easy"],
+    "lessonplanb":["Medium"],
+    "lessonplanc":["Hard"]
 
 }

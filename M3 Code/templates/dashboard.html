@@ -3,6 +3,9 @@
 
 {% endblock %}
 {% block content %} 
+
+<!-- <meta http-equiv="refresh" content="5" /> -->
+
 <!doctype html>
 <html lang='en'>
 
@@ -16,25 +19,25 @@
 </head>
 
 <body>
-  <h1 class="text-center">{{level}}</h1>
+
+  <h1 class="text-center"></h1>
   <table class="table table-striped text-center" style="width:50%; margin-left:auto; margin-right:auto">
     <thead class="thead-light ">
       <tr>
+        <th scope="col">Difficult Level</th>
+        <th scope="col">Sensor Status</th>
+        <th scope="col">Distance</th>
         <th scope="col">Speed</th>
-        <th scope="col"></th>
+        <th scope="col">Actuator Status</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">A</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">B</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">C</th>
+        <th scope="row">{{data[0]}}</th>
+        <th scope="row">{{data[1]}}</th>
+        <th scope="row">{{data[2]}}</th>
+        <th scope="row">{{data[3]}}</th>
+        <th scope="row">{{data[4]}}</th>
         <td></td>
       </tr>
     </tbody>
@@ -55,7 +58,6 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 </body>
-
 
 </html>
 {% endblock %}

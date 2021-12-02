@@ -3,13 +3,16 @@ from datetime import datetime
 import re
 from flask import render_template, request, redirect, url_for
 import json
+from car import carController
 
 app = Flask(__name__)
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="5000")
 @app.route("/", methods=["POST", "GET"])
 def home():
-    
+    with open('static/level.txt', 'w') as f:        # Dis code to reset the level.txt file
+        f.write("") 
+
     error = None
     
     with open('./static/data.json') as json_data:
@@ -23,14 +26,7 @@ def home():
             error = 'Invalid PIN. Please try again.'
     
     return render_template("home.html", error = error)
-<<<<<<< Updated upstream
 
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
-
-@app.route("/lessonplan", methods=["POST", "GET"])
-=======
 # New functions
 @app.route("/validatepin/")
 def validatepin():
@@ -44,7 +40,7 @@ def scratcheasy():
         level = "Easy"           # Get user input on Easy / Medium / Hard
         with open('static/level.txt', 'w') as f:    # Write difficulty level into level.txt
             f.write(level)                          # Write difficulty level into level.txt
-        return render_template("dashboard.html", level = level)     # Open dashboard page
+        return redirect(url_for("dashboard"))      # Open dashboard page
     return render_template("scratcheasy.html")
 
 @app.route("/scratcheasy2/")
@@ -59,7 +55,7 @@ def scratchmedium():
         level = "Medium"           # Get user input on Easy / Medium / Hard
         with open('static/level.txt', 'w') as f:    # Write difficulty level into level.txt
             f.write(level)                          # Write difficulty level into level.txt
-        return render_template("dashboard.html", level = level)     # Open dashboard page
+        return redirect(url_for("dashboard"))      # Open dashboard page
 
     return render_template("scratchmedium.html")
 
@@ -71,53 +67,18 @@ def scratchhard():
         level = "Hard"           # Get user input on Easy / Medium / Hard
         with open('static/level.txt', 'w') as f:    # Write difficulty level into level.txt
             f.write(level)                          # Write difficulty level into level.txt
-        return render_template("dashboard.html", level = level)     # Open dashboard page
+        return redirect(url_for("dashboard"))      # Open dashboard page
 
     return render_template("scratchhard.html")
 
 @app.route('/lessonplans', methods=['GET', 'POST'])
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 def setlessonplan():
+    with open('static/level.txt', 'w') as f:        # Dis code to reset the level.txt file
+        f.write("") 
     with open('./static/data.json') as json_data:
         lesson_data = json.load(json_data)
     if request.method == "POST":
         lessonplan = request.form["lp"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        if lessonplan in lesson_data["lessonplanA"]:
-            return redirect(url_for("lessonplanA"))
-        elif lessonplan in lesson_data["lessonplanB"]:
-             return redirect(url_for("lessonplanB"))
-        elif lessonplan in lesson_data["lessonplanC"]:
-            return redirect(url_for("lessonplanC"))
-
-
-
-def home():
-    return render_template("home.html")
-# New functions
-@app.route("/validatepin/", methods=["POST", "GET"])
-def validatepin():
-    
-    error = None
-    
-    with open('./static/data.json') as json_data:
-        pin_data = json.load(json_data)
-    
-    if request.method == "POST":
-        pin = request.form["fpin"]
-        if pin in pin_data["pin"]:
-            return redirect(url_for("lessonplan"))
-        else:
-            error = 'Invalid PIN. Please try again.'
-    
-    return render_template("validatepin.html", error = error)
-=======
-=======
->>>>>>> Stashed changes
         if lessonplan in lesson_data["lessonplana"]:
             return redirect(url_for("scratcheasy"))
             #return render_template("scratcheasy.html")
@@ -127,10 +88,6 @@ def validatepin():
         elif lessonplan in lesson_data["lessonplanc"]:
             return redirect(url_for("scratchhard"))   
             #return render_template("scratchhard.html")
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 @app.route("/scratch/")
 def scratch():
@@ -138,7 +95,19 @@ def scratch():
 
 @app.route("/dashboard/")
 def dashboard():
-    return render_template("dashboard.html")
+    # level = carController.sendData()
+    # return render_template("dashboard.html", level = level)
+    level = carController.sendData()
+    data2 = carController.receiveData()
+    data = [level, data2[0], data2[1], data2[2], data2[3]]
+    return render_template("dashboard.html", data = data)
+
+@app.route("/dashboard2/")
+def dashboard2():
+    level = carController.sendData()
+    data2 = carController.receiveData()
+    data = [level, data2[0], data2[1], data2[2], data2[3]]
+    return render_template("dashboard2.html", data = data)
 
 @app.route("/hello/")
 @app.route("/hello/<name>")
