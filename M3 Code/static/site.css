@@ -102,15 +102,9 @@
   padding: 1px 0 0 1px;
 }
 .scratchhome{
-  position: absolute;
-  top: 50px;
-  right: 1200px;
   font-size: 35px
 }
 .scratchhomecontent{
-  position: absolute;
-  top: 220px;
-  right: 1120px;
   font-size: 20px
 }
 .aboutscratch{
@@ -127,8 +121,6 @@ background-repeat: no-repeat;
 float:left;
 }
 .validateform{
-  position: relative;
-  top:300px;
   text-align: center;
   font-size: 20px
 }

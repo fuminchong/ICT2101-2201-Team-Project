@@ -39,15 +39,6 @@
     <h2>Scratch <br>Programming</h2>
 </div>
 
-<form class="validateform" action="#" method="post">
-    <input type="text" id="pin" name="fpin" placeholder="Enter PIN">
-	{% if error %}
-        <p class="error"><strong>Error:</strong> {{ error }}
-      	{% endif %}
-    <br>
-    <br>
-    <button type="submit" name="submit_button" class="btn btn-oval">Submit Pin</button>
-  </form>
 
 <div class="scratchhomecontent">
     <p>A simple and accessible programming language<br> for young kids<br>
@@ -55,6 +46,16 @@
     </p>
 
 </div>
+<form class="validateform" action="#" method="post">
+  <input type="text" id="pin" name="fpin" placeholder="Enter PIN">
+{% if error %}
+      <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+  <br>
+  <br>
+  <button type="submit" name="submit_button" class="btn btn-oval">Submit Pin</button>
+</form>
+
 
 
 {% endblock %}
