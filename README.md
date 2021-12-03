@@ -34,6 +34,8 @@
 
 **System Test Cases**
 
+![test case ss1](https://user-images.githubusercontent.com/73540954/144647626-88e5e8a5-705b-48cc-b492-e6ee54313cdb.JPG)
+![test case ss2](https://user-images.githubusercontent.com/73540954/144647630-4a2c0978-8941-45fe-b4a0-4e3cb9a4263d.JPG)
 **System Test Video**
 ## White Box Testing
 **Selected Class for White Box Testing**
