@@ -15,11 +15,27 @@
 
 
 <style>
+    #mainContainer{
+        max-width:1000px;
+    }
+    #blocklyContainer {
+    position: relative;
+    width: 60%;
+    height: 80vh;
+    }
+
+    #blocklyDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    }
     .submit {
         font-family: Helvetica, Arial, sans-serif;
         position: absolute;
-        top: 600px;
-        right: 600px;
+        top: 250px;
+        right:-200px;
         background-color: white;
         color: black;
         border: 2px solid #555555;
@@ -29,8 +45,8 @@
     #myP{
         font-family: Helvetica, Arial, sans-serif;
         position: absolute;
-        top: 500px;
-        right: 600px;
+        top: 150px;
+        right:-200px;
         background-color: white;
         color: black;
         border: 2px solid #555555;
@@ -57,9 +73,16 @@
 
 <img src="/static/easylevel.gif" alt="easylevel" width="250" height="250"/>
 
+<div id="mainContainer">
 <section id="blocklyContainer">
-    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+    <div id="blocklyDiv" style="position:absolute"></div>
+    <form method="POST" action="/scratcheasy" method="post">
+        <input type="submit" value="Submit Code" id="myP">
+    </form>
+    
+    <button class="submit" onclick="run()"> Run Challenge</button>
 </section>
+</div>
 
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <block type="move"></block>
@@ -88,11 +111,6 @@
 
 </xml>
 
-<form method="POST" action="/scratcheasy" method="post">
-    <input type="submit" value="Submit Code" id="myP">
-</form>
-
-<button class="submit" onclick="run()"> Run Challenge</button>
 
 <script>
     document.getElementById("myP").style.visibility = "hidden";

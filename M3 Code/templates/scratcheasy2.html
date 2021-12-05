@@ -14,10 +14,43 @@
 {% block content %}
 
 <style>
+    #mainContainer{
+        max-width:1000px;
+    }
+    #blocklyContainer {
+    position: relative;
+    width: 60%;
+    height: 80vh;
+    }
+
+    #blocklyDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    }
     .submit {
-        float: right;
         font-family: Helvetica, Arial, sans-serif;
-        padding: 10px;
+        position: absolute;
+        top: 250px;
+        right:-200px;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        height:80px;
+        width:100px;
+    }
+    #myP{
+        font-family: Helvetica, Arial, sans-serif;
+        position: absolute;
+        top: 150px;
+        right:-200px;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        height:80px;
+        width:100px;
     }
 </style>
 
@@ -40,9 +73,13 @@
     1. Not equals to true
     2. Equals to false
 </p>
+
+<div id="mainContainer">
 <section id="blocklyContainer">
-    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+    <div id="blocklyDiv" style="position:absolute"></div>
+    <button class="submit" onclick="run()"> Run Challenge</button>
 </section>
+</div>
 
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <block type="move"></block>
@@ -62,7 +99,7 @@
 
 </xml>
 
-<button class="submit" onclick="run()"> Run Me </button>
+
 
 <script>
     var demoWorkspace = Blockly.inject('blocklyDiv',
@@ -75,7 +112,6 @@
         var code = Blockly.Python.workspaceToCode(demoWorkspace);
         //remove special characters
         code = code.replace(/(\r\n|\n|\r)/gm, "");
-        alert(code);
         console.log(code);
         
         //check if code is correct
@@ -85,6 +121,9 @@
         else if (code == "speed = Noneobstacle = Nonespeed = 4while obstacle == False:  move")
         {
             alert("CORRECT!");
+        }
+        else{
+            alert("WRONG!");
         }
 
     }
