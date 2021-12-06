@@ -1,4 +1,5 @@
 # ICT2101-2201-Team-Project
+![image](https://user-images.githubusercontent.com/75081645/144783400-5a3f18c7-ddc0-4288-b13c-a080456b5e9e.png)
 
 ## Team Members
 - Ong Sheng Wei Kenrick (2000909)
@@ -14,6 +15,8 @@
 **Clone the Project Repo**
 1. Open a shell and navigate to desired directory to save the project folder
 2. Execute the git clone command
+git clone https://github.com/nimuf/ICT2101-2201-Team-Project.git
+
 **Setting up the Project Environment**
 1. Create and activate a virtual environment named .venv
 (py -3 -m venv .venv
@@ -28,9 +31,18 @@
 2. Start the debugger by selecting the Run > Start Debugging 
 3. Open Google chrome and navigate to http://127.0.0.1:5000/
 
-## Work Distribution
-**Branch Management**
+## Work Management
+**Individual Branch Management**
+1. Each team member should perform their own changes in their own individual branch
+2. Pushing to each individual branch should only be done when the component done is in a **working** version
 
+**Main Branch Management**
+1. Pull requests to merge to main should be done through GitHub's web UI
+
+**Branch Management Diagram**
+![image](https://user-images.githubusercontent.com/75081645/144783341-fb6e5354-efeb-4a9f-ac8e-47606af6246e.png)
+
+**Git WorkFlow Diagram**
 ## Black Box Testing
 **System State Diagram**
 
@@ -41,6 +53,7 @@
 ![test case ss1](https://user-images.githubusercontent.com/73540954/144647626-88e5e8a5-705b-48cc-b492-e6ee54313cdb.JPG)
 ![test case ss2](https://user-images.githubusercontent.com/73540954/144647630-4a2c0978-8941-45fe-b4a0-4e3cb9a4263d.JPG)
 **System Test Video**
+
 ## White Box Testing
 **Selected Class for White Box Testing**
 
