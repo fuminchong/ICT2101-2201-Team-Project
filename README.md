@@ -30,14 +30,15 @@ git clone https://github.com/nimuf/ICT2101-2201-Team-Project.git
 1. Navigate to the root directory of the project (where app.py is)
 2. Start the debugger by selecting the Run > Start Debugging 
 3. Open Google chrome and navigate to http://127.0.0.1:5000/
-
+# Prototype Implementation
 ## Work Management
 **Individual Branch Management**
 1. Each team member should perform their own changes in their own individual branch
 2. Pushing to each individual branch should only be done when the component done is in a **working** version
 
 **Main Branch Management**
-1. Pull requests to merge to main should be done through GitHub's web UI
+1. Only completed individual branches can be merged into the main branch
+2. Pull requests to merge the individual branch should be done through Github's web ui
 
 **Branch Management Diagram**
 
@@ -57,7 +58,16 @@ git clone https://github.com/nimuf/ICT2101-2201-Team-Project.git
 
 Click Here:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Xvw59fAYJm0/0.jpg)](https://www.youtube.com/watch?v=Xvw59fAYJm0)
-## White Box Testing
+
+## Programming Model Used
+The programming model used is object oriented programming
+**Classes and instance attributes**
+THe parent class created is car class. Instance methods are created within it that are functionalites of the car class.
+![image](https://user-images.githubusercontent.com/75081645/144785207-355286a0-f6f8-4763-a611-f629eb9fa332.png)
+**Inheritance**
+The car controller is the child class of the car class. It inherits the instances from the car class.
+
+# White Box Testing
 **Selected Class for White Box Testing**
 
 ![image](https://user-images.githubusercontent.com/72655216/144747751-6a190a92-22ec-4336-9b6b-9846bd84dc1e.png)
@@ -154,11 +164,5 @@ Total coverage of all 3 test cases:
 
 Click here:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/cA57TA9uwhE/0.jpg)](https://www.youtube.com/watch?v=cA57TA9uwhE)
-## Programming Model Used
-The programming model used is object oriented programming
-**Classes and instance attributes**
-THe parent class created is car class. Instance methods are created within it that are functionalites of the car class.
-![image](https://user-images.githubusercontent.com/75081645/144785207-355286a0-f6f8-4763-a611-f629eb9fa332.png)
-**Inheritance**
-The car controller is the child class of the car class. It inherits the instances from the car class.
+
 
