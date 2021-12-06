@@ -46,9 +46,12 @@ git clone https://github.com/nimuf/ICT2101-2201-Team-Project.git
 
 **Branch Management Diagram**
 
-![image](https://user-images.githubusercontent.com/72655216/144834816-0c0284ba-29b1-43f1-a2f7-78003a565d75.png)
+![image](https://user-images.githubusercontent.com/72655216/144869560-d46157c0-bc88-4971-97fc-06a6d0949d7a.png)
 
 **Git WorkFlow Diagram**
+
+![image](https://user-images.githubusercontent.com/72655216/144869616-c8ad0fdd-2072-4dd6-9ff9-52690e5a1325.png)
+
 ## Black Box Testing
 **System State Diagram**
 
@@ -105,7 +108,7 @@ First, we need to install the Code Coverage library. Run the following command i
 
 Once the Code Coverage library is installed, change directory to your folder location by using the "cd" command:
 
-- $ cd <folder location>
+- $ cd (folder location)
 
 Afterwards, run the following code to run the Code Coverage on the car.py file:
 
