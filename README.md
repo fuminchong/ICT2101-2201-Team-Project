@@ -54,7 +54,6 @@ git clone https://github.com/nimuf/ICT2101-2201-Team-Project.git
 ![test case ss2](https://user-images.githubusercontent.com/73540954/144647630-4a2c0978-8941-45fe-b4a0-4e3cb9a4263d.JPG)
 **System Test Video**
 
-
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Xvw59fAYJm0/0.jpg)](https://www.youtube.com/watch?v=Xvw59fAYJm0)
 ## White Box Testing
 **Selected Class for White Box Testing**
@@ -151,6 +150,7 @@ Total coverage of all 3 test cases:
 
 **White Box Testing Video**
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/cA57TA9uwhE/0.jpg)](https://www.youtube.com/watch?v=cA57TA9uwhE)
 ## Programming Model Used
 The programming model used is object oriented programming
 **Classes and instance attributes**
