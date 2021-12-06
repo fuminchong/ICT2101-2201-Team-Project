@@ -19,7 +19,9 @@
 (py -3 -m venv .venv
 .venv\scripts\activate)
 2. Open the Command Palette and select interprete in your project folder that starts with ./.venv or .\.venv
+![image](https://user-images.githubusercontent.com/75081645/144780760-3214cab5-2f79-40de-b4bd-f6d8873bc169.png)
 3. Execute the command python -m pip install --upgrade pip and python -m pip install flask
+![image](https://user-images.githubusercontent.com/75081645/144780692-4dcfa933-8fa6-45a1-b023-95a62b4aa05d.png)
 
 **How to run**
 1. Navigate to the root directory of the project (where app.py is)
