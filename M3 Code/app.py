@@ -7,8 +7,7 @@ from car import carController
 
 
 app = Flask(__name__)
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port="5000")
+
 @app.route("/", methods=["POST", "GET"])
 def home():
 
@@ -124,3 +123,6 @@ def hello_there(name = None):
 @app.route("/api/data")
 def get_data():
     return app.send_static_file("data.json")
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port="5000")
