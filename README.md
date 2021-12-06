@@ -21,9 +21,13 @@ git clone https://github.com/nimuf/ICT2101-2201-Team-Project.git
 1. Create and activate a virtual environment named .venv
 (py -3 -m venv .venv
 .venv\scripts\activate)
+
 2. Open the Command Palette and select interprete in your project folder that starts with ./.venv or .\.venv
+
 ![image](https://user-images.githubusercontent.com/75081645/144780760-3214cab5-2f79-40de-b4bd-f6d8873bc169.png)
+
 3. Execute the command python -m pip install --upgrade pip and python -m pip install flask
+
 ![image](https://user-images.githubusercontent.com/75081645/144780692-4dcfa933-8fa6-45a1-b023-95a62b4aa05d.png)
 
 **How to run**
@@ -59,14 +63,6 @@ git clone https://github.com/nimuf/ICT2101-2201-Team-Project.git
 Click Here:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Xvw59fAYJm0/0.jpg)](https://www.youtube.com/watch?v=Xvw59fAYJm0)
 
-## Programming Model Used
-The programming model used is object oriented programming
-**Classes and instance attributes**
-THe parent class created is car class. Instance methods are created within it that are functionalites of the car class.
-![image](https://user-images.githubusercontent.com/75081645/144785207-355286a0-f6f8-4763-a611-f629eb9fa332.png)
-**Inheritance**
-The car controller is the child class of the car class. It inherits the instances from the car class.
-
 # White Box Testing
 **Selected Class for White Box Testing**
 
@@ -100,6 +96,24 @@ Functions:
 ![image](https://user-images.githubusercontent.com/72655216/144748039-bc88b6a9-03cb-4c52-af63-754445a13545.png)
 ![image](https://user-images.githubusercontent.com/72655216/144748050-082c3a2c-5c20-445b-a626-259a866b4772.png)
 ![image](https://user-images.githubusercontent.com/72655216/144748057-9ec86246-cca6-44cb-995d-c17588d5adb9.png)
+
+**How to run the test cases:**
+
+First, we need to install the Code Coverage library. Run the following command inside your command prompt:
+
+- $ pip install coverage
+
+Once the Code Coverage library is installed, change directory to your folder location by using the "cd" command:
+
+- $ cd <folder location>
+
+Afterwards, run the following code to run the Code Coverage on the car.py file:
+
+- $ coverage run car.py
+
+Then, run the following code to view the report (result) of the Code Coverage:
+    
+- $ coverage report
 
 
 We have implemented 3 different test cases for statement coverage testing. The 3 test cases are as follow:
