@@ -148,3 +148,12 @@ Total coverage of all 3 test cases:
 
 
 **White Box Testing Video**
+
+## Programming Model Used
+The programming model used is object oriented programming
+**Classes and instance attributes**
+THe parent class created is car class. Instance methods are created within it that are functionalites of the car class.
+![image](https://user-images.githubusercontent.com/75081645/144785207-355286a0-f6f8-4763-a611-f629eb9fa332.png)
+**Inheritance**
+The car controller is the child class of the car class. It inherits the instances from the car class.
+
