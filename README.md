@@ -40,7 +40,8 @@ git clone https://github.com/nimuf/ICT2101-2201-Team-Project.git
 1. Pull requests to merge to main should be done through GitHub's web UI
 
 **Branch Management Diagram**
-![image](https://user-images.githubusercontent.com/75081645/144783341-fb6e5354-efeb-4a9f-ac8e-47606af6246e.png)
+
+![image](https://user-images.githubusercontent.com/72655216/144834816-0c0284ba-29b1-43f1-a2f7-78003a565d75.png)
 
 **Git WorkFlow Diagram**
 ## Black Box Testing
